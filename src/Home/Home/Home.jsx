@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import Counter from './Counter/Counter';
 
 const Home = () => {
     return (
         <div>
-            Home
+            <Counter/>
         </div>
     );
 };
