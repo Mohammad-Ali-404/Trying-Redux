@@ -1,22 +1,22 @@
 /* eslint-disable react/prop-types */
 import { useDispatch, useSelector } from 'react-redux';
-import { decrement, increment } from '../Redux/Counter/Action';
-const CounterHook = () => {
-    const count = useSelector((state) =>state.counter.value)
+import { decrement, increment } from '../Redux/Counter/DynamicCounter/DynamicAction';
+const DynamicCounterHook = () => {
+    const count = useSelector((state) =>state.dynamicCounter.value)
     const dispatch = useDispatch()
 
-    const incrementHandler = () =>{
-      dispatch(increment())
+    const incrementHandler = (value) =>{
+      dispatch(increment(value))
     }
-    const decrementHandler = () =>{
-      dispatch(decrement())
+    const decrementHandler = (value) =>{
+      dispatch(decrement(value))
     }
 
     return (
       <div className="flex items-center justify-center bg-slate-100 max-w-md mx-auto my-10 py-6">
         <button
           className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
-          onClick={decrementHandler}
+          onClick={ ()=> decrementHandler(5)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@ const CounterHook = () => {
         <h1 className="w-16 text-center bg-gray-100 border-t border-b border-gray-300 py-2">{count}</h1>
         <button
           className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
-          onClick={incrementHandler}
+          onClick={() =>incrementHandler(5)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -61,4 +61,4 @@ const CounterHook = () => {
 //   };
 // };
 
-export default CounterHook;
+export default DynamicCounterHook;
