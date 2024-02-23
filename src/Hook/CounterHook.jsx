@@ -14,6 +14,7 @@ const CounterHook = () => {
 
     return (
       <div className="flex items-center justify-center bg-slate-100 max-w-md mx-auto my-10 py-6">
+        <h1>Normal counter</h1>
         <button
           className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
           onClick={decrementHandler}
